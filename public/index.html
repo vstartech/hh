@@ -1,0 +1,59 @@
+<html>
+	<head>
+	</head>
+	<body ng-app="">
+		<h1>HH - restaurants</h1>
+		<div ng-controller="search">
+			<form>
+				<div>
+					 <h4>day:</h4>
+					 <input name="dayofweek" type="radio" value="1" ng-model="dow"> monday
+					 <input name="dayofweek" type="radio" value="2" ng-model="dow"> tuesday
+					 <input name="dayofweek" type="radio" value="3" ng-model="dow"> thursday
+					 <input name="dayofweek" type="radio" value="5" ng-model="dow"> friday
+					 <input name="dayofweek" type="radio" value="6" ng-model="dow"> saturday
+					 <input name="dayofweek" type="radio" value="7" ng-model="dow"> sunday
+				</div>
+				<div>
+					<h4>time:</h4>
+					<input name="timeofday" type="radio" value="16" ng-model="tod"> 4:00 pm
+					<input name="timeofday" type="radio" value="18" ng-model="tod"> 6:00 pm
+					<input name="timeofday" type="radio" value="22" ng-model="tod"> 10:00 pm
+				</div>
+				<div>
+					<h4>item:</h4>
+					<input name="itemtype" type="radio" value="appetizers" ng-model="itemtype"> appetizers
+					<input name="itemtype" type="radio" value="drinks" ng-model="itemtype"> drinks
+					<input name="itemtype" type="radio" value="pizza" ng-model="itemtype"> pizza
+					<input name="itemtype" type="radio" value="burger" ng-model="itemtype"> burger
+					<input name="itemtype" type="radio" value="entree" ng-model="itemtype"> entree
+				</div>
+				<div>
+					<h4>place:</h4>
+					<input name="placetype" type="radio" value="restaurant" ng-model="placetype"> restaurants
+					<input name="placetype" type="radio" value="bar" ng-model="placetype"> bars
+					<input name="placetype" type="radio" value="lounge" ng-model="placetype"> lounges
+				</div>
+				<div>
+					<button type="submit" ng-click="query()">search</button>
+					<button type="button" ng-click="clear()">clear</button>
+				</div>
+				<hr/>
+				<div>
+					{{ result }}
+				</div>
+			</form>
+		</div>
+		<!--
+		<div ng-init="restaurants=['kona grill','BJs','yard stick']">
+			<li ng-repeat="restaurant in restaurants">
+				{{ restaurant }}
+			</li>
+		</div>
+		-->
+	</body>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>-->
+	<script src="/js/directives.js"></script>
+	<script src="/js/controllers.js"></script>
+	<script src="/js/lib/angular/angular.min.js"></script>
+</html>

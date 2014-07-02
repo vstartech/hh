@@ -1,0 +1,19 @@
+{
+	"name": "HH",
+	"version": "0.0.1",
+	"description": "Happy Hour",
+	"author": "vstar technologies",
+	"email": "tovstartech@gmail.com",
+	"dependencies": {
+		"express":"3.x",
+		"coffee-middle": "*",
+		"elasticsearch": "^1.5.14"
+	},
+	"engines":{
+		"node": "0.10.x"
+	},
+	"repository":{
+		"type":"git",
+		"url":"https://github.com/vstartech/hh.git"
+	}
+}
