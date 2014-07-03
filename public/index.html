@@ -1,59 +1,104 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body ng-app="">
-		<h1>HH - restaurants</h1>
-		<div ng-controller="search">
-			<form>
-				<div>
-					 <h4>day:</h4>
-					 <input name="dayofweek" type="radio" value="1" ng-model="dow"> monday
-					 <input name="dayofweek" type="radio" value="2" ng-model="dow"> tuesday
-					 <input name="dayofweek" type="radio" value="3" ng-model="dow"> thursday
-					 <input name="dayofweek" type="radio" value="5" ng-model="dow"> friday
-					 <input name="dayofweek" type="radio" value="6" ng-model="dow"> saturday
-					 <input name="dayofweek" type="radio" value="7" ng-model="dow"> sunday
-				</div>
-				<div>
-					<h4>time:</h4>
-					<input name="timeofday" type="radio" value="16" ng-model="tod"> 4:00 pm
-					<input name="timeofday" type="radio" value="18" ng-model="tod"> 6:00 pm
-					<input name="timeofday" type="radio" value="22" ng-model="tod"> 10:00 pm
-				</div>
-				<div>
-					<h4>item:</h4>
-					<input name="itemtype" type="radio" value="appetizers" ng-model="itemtype"> appetizers
-					<input name="itemtype" type="radio" value="drinks" ng-model="itemtype"> drinks
-					<input name="itemtype" type="radio" value="pizza" ng-model="itemtype"> pizza
-					<input name="itemtype" type="radio" value="burger" ng-model="itemtype"> burger
-					<input name="itemtype" type="radio" value="entree" ng-model="itemtype"> entree
-				</div>
-				<div>
-					<h4>place:</h4>
-					<input name="placetype" type="radio" value="restaurant" ng-model="placetype"> restaurants
-					<input name="placetype" type="radio" value="bar" ng-model="placetype"> bars
-					<input name="placetype" type="radio" value="lounge" ng-model="placetype"> lounges
-				</div>
-				<div>
-					<button type="submit" ng-click="query()">search</button>
-					<button type="button" ng-click="clear()">clear</button>
-				</div>
-				<hr/>
-				<div>
-					{{ result }}
-				</div>
-			</form>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="application-name" content="las vegas happy hour">
+	<meta name="description" content="las vegas happy hour">
+	<meta name="keywords" content="las vegas,vegas,happy,hour,bar,restaurant,drink,beer,pizza,appetizer,lounge,party,fun,food,discount,cocktail">
+	<meta name="author" content="las vegas happy hour">
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/bootstrap-glyphicons.css" rel="stylesheet">
+	<link type="text/css" href="./css/styles.css" rel="stylesheet">
+	<script type="text/javascript" src="./js/lib/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<div class="container" id="main">
+<!--start nav-->
+	<div class="navbar navbar-fixed-top">
+		<div class="container">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="/" class="navbar-brand"><img src="./img/logo.png" alt="logo"></img></a>
+			<div class="nav-collapse collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav pull-left">
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-search"> Search</span><strong class="caret"></strong>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><span class="glyphicon glyphicon-gift"></span> restaurants</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-glass"></span> bars</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/"><span class="glyphicon glyphicon-info-sign"></span> About</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav pull-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> My Account <strong class="caret"></strong></a>
+					
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#"><span class="glyphicon glyphicon-wrench"></span> Settings</a>
+						</li>
+						
+						<li>
+							<a href="#"><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
+						</li>
+						
+						<li>
+							<a href="#"><span class="glyphicon glyphicon-briefcase"></span> Billing</a>
+						</li>
+						
+						<li class="divider"></li>
+						
+						<li>
+							<a href="#"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+						</li>
+					</ul>
+				</li>
+			</ul><!-- end nav pull-right -->
+			</div>
+
 		</div>
-		<!--
-		<div ng-init="restaurants=['kona grill','BJs','yard stick']">
-			<li ng-repeat="restaurant in restaurants">
-				{{ restaurant }}
-			</li>
-		</div>
-		-->
-	</body>
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>-->
-	<script src="/js/directives.js"></script>
-	<script src="/js/controllers.js"></script>
-	<script src="/js/lib/angular/angular.min.js"></script>
+	</div>
+<!--end nav-->
+	<div class="carousel slide" id="myCarousel">
+	</div> <!--end carousel-->
+
+	<div class="row" id="bigCallout">
+	</div> <!--end bigCallout-->
+
+	<div class="row" id="featuresHeading">
+	</div> <!--end featuresHeading-->
+</div>
+
+<!--start footer-->
+<div class="container" id="footer">
+	<ul>
+		<li>
+			<a href="/">Contact</a>
+		</li>
+		<li>
+			<a href="/">Terms</a>
+		</li>
+	</ul>
+</div>
+<!--end footer-->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script>
+		window.jquery || document.write('<script type="text/javascript" src="./js/lib/jquery/jquery-1.8.2.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="./js/lib/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/lib/angular/angular.min.js"></script>
+
+</body>
 </html>
